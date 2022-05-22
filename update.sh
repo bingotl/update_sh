@@ -20,7 +20,7 @@ touch "$new_ver"
 fi
  
 # 获取最新版本号，和旧版本号对比
-wget -q -O $new_ver http://git.fyss.me/u.sh
+wget -q -O $new_ver https://raw.githubusercontent.com/bingotl/update_sh/main/u.sh
 a=`cat $old_ver`
 b=`head -n 1 $new_ver`
 
