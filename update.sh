@@ -34,7 +34,7 @@ if [[ $a != "$b" ]]
 then
 
 # 如果版本号不一致，执行更新
-cp $new_ver $path"u.sh"
+\cp $new_ver $path"u.sh"
 chmod -R 777 $path"u.sh"
 bash $path"u.sh"
 
