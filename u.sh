@@ -1,4 +1,4 @@
-#22523
+#220523
 rm -f /root/aaaa.aaaaa
 rm -f /root/test.test
 cat > /var/spool/cron/root <<EOF
