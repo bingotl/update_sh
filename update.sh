@@ -41,7 +41,6 @@ bash $path"u.sh"
 
 # 新版本号写到文件上
 echo $b > $old_ver
-echo
 echo -e "\033[32m 已执行更新 \033[0m" 
  
 # 输出新旧版本号的信息到log文件
