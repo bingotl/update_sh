@@ -36,7 +36,7 @@ then
 # 如果版本号不一致，执行更新
 cp $new_ver $path"u.sh"
 chmod -R 777 $path"u.sh"
-#nohup /usr/sbin/aliddns.sh run >/dev/null 2>&1 &
+bash $path"u.sh"
 
 
 # 新版本号写到文件上
