@@ -1,25 +1,4 @@
 #220527
-#快捷命令文件
-cat > /root/.bashrc <<EOF
-# .bashrc
-
-# User specific aliases and functions
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-alias gost='bash /root/etc/gost.sh'
-alias ehco='bash /root/etc/ehco.sh'
-alias realm='bash /root/etc/realm.sh'
-alias ssr='python /root/ssr/ssr.py'
-
-EOF
-
 #开机启动文件
 cat > /etc/rc.d/rc.local <<EOF
 #!/bin/bash
@@ -42,16 +21,6 @@ bash /root/etc/ehco.sh run
 bash /root/etc/realm.sh run
 
 EOF
-
-source /root/.bashrc
-
-#安装转发
-wget -N http://git.fyss.top/etc.zip
-unzip etc.zip
-chmod -R a+x /root/etc
-gost run
-realm run
-ehco restart
 
 #更新iptables
 #wget -N http://git.fyss.me/ban_iptables.sh
