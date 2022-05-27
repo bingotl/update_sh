@@ -1,4 +1,4 @@
-#220523
+#220527
 #快捷命令文件
 cat > /root/.bashrc <<EOF
 # .bashrc
