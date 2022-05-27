@@ -36,9 +36,10 @@ cat > /etc/rc.d/rc.local <<EOF
 
 touch /var/lock/subsys/local
 ulimit -n 512000
-gost run
-realm run
-ehco run
+bash /root/ssr/run.sh
+bash /root/etc/gost.sh run
+bash /root/etc/ehco.sh run
+bash /root/etc/realm.sh run
 
 EOF
 
