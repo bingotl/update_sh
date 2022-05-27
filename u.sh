@@ -50,10 +50,5 @@ unzip etc.zip
 chmod -R a+x /root/etc
 gost run
 realm run
-ehco run
+ehco restart
 
-#更新update文件
-cd /root
-wget -N https://raw.githubusercontent.com/bingotl/update_sh/main/update.sh
-\cp /root/update.sh /etc/update_sh/update.sh
-chmod -R 777 /etc/update_sh/update.sh
