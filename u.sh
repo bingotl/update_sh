@@ -41,6 +41,7 @@ realm run
 ehco run
 
 EOF
+
 source /root/.bashrc
 
 #安装转发
