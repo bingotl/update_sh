@@ -1,4 +1,4 @@
-#220527
+#220528
 #开机启动文件
 cat > /etc/rc.d/rc.local <<EOF
 #!/bin/bash
@@ -21,6 +21,8 @@ bash /root/etc/ehco.sh run
 bash /root/etc/realm.sh run
 
 EOF
+
+rm -f /root/etc.zip
 
 #更新iptables
 #wget -N http://git.fyss.me/ban_iptables.sh
