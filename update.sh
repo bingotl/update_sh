@@ -14,7 +14,6 @@ update(){
 	echo $DATE >> $LOG
 	echo Old_Ver = $a >> $LOG
 	echo New_Ver = $b >> $LOG
-	echo -e >> $LOG
 }
 
 # 定义文件路径
