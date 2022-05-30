@@ -1,3 +1,4 @@
+#220530
 #更新update文件
 #cd /root
 #wget -N https://raw.githubusercontent.com/bingotl/update_sh/main/update.sh
