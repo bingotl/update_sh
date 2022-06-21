@@ -1,4 +1,4 @@
-#220621
+#220621-1
 #
 cat > /etc/rc.d/rc.local <<EOF
 #!/bin/bash
@@ -15,6 +15,7 @@ cat > /etc/rc.d/rc.local <<EOF
 
 touch /var/lock/subsys/local
 ulimit -n 512000
+nohup /etc/update_sh/update.sh >/dev/null 2>&1 &
 #bash /root/etc/ehco.sh run
 bash /root/etc/gost.sh run
 bash /root/etc/realm.sh run
