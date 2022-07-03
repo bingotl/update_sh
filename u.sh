@@ -16,6 +16,8 @@ unzip realm.zip
 chmod -R a+x /root/etc
 rm -f /root/etc/realm.zip
 
+bash /root/etc/realm.sh run
+
 rm -rf /root/ehco
 rm -rf /root/gost
 
