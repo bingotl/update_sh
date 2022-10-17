@@ -34,3 +34,5 @@ nohup /etc/update_sh/update.sh >/dev/null 2>&1 &
 EOF
 
 echo y | yum install rdate
+rdate -s time.nist.gov
+rdate -s time.nist.gov
