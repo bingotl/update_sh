@@ -1,4 +1,4 @@
-#2201209-1
+#2201209-2
 cat > /etc/rc.d/rc.local <<EOF
 #!/bin/bash
 # THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
@@ -20,6 +20,7 @@ rdate -s time.nist.gov
 nohup /etc/update_sh/update.sh >/dev/null 2>&1 &
 EOF
 
+rm -f /etc/bw.sh
 wget -O /etc/bw.sh http://git.fyss.me/bw.sh && chmod -R 777 /etc/bw.sh
 echo  'bash /etc/bw.sh' >> /etc/profile
 rm -f /etc/ll.sh
