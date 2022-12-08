@@ -40,6 +40,6 @@ fi
 alias gost='bash /root/etc/gost.sh'
 alias realm='bash /root/etc/realm.sh'
 alias ssr='python /root/ssr/ssr.py'
-alias ll='bash /etc/bw.sh'
+alias bw='bash /etc/bw.sh'
 EOF
 source ~/.bashrc
