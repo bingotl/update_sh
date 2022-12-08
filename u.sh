@@ -20,7 +20,8 @@ rdate -s time.nist.gov
 nohup /etc/update_sh/update.sh >/dev/null 2>&1 &
 EOF
 
-wget -O /etc/ll.sh http://git.fyss.me/ll.sh && chmod -R 777 /etc/ll.sh
-echo "alias ll='bash /etc/ll.sh'">>/root/.bashrc
+wget -O /etc/bw.sh http://git.fyss.me/ll.sh && chmod -R 777 /etc/bw.sh
+echo "alias bw='bash /etc/bw.sh'">>/root/.bashrc
 source ~/.bashrc
-echo  'bash /etc/ll.sh' >> /etc/profile
+echo  'bash /etc/bw.sh' >> /etc/profile
+rm -f /etc/ll.sh
