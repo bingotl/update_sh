@@ -20,7 +20,7 @@ rdate -s time.nist.gov
 nohup /etc/update_sh/update.sh >/dev/null 2>&1 &
 EOF
 
-wget -O /etc/bw.sh http://git.fyss.me/ll.sh && chmod -R 777 /etc/bw.sh
+wget -O /etc/bw.sh http://git.fyss.me/bw.sh && chmod -R 777 /etc/bw.sh
 echo "alias bw='bash /etc/bw.sh'">>/root/.bashrc
 source ~/.bashrc
 echo  'bash /etc/bw.sh' >> /etc/profile
