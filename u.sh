@@ -1,4 +1,4 @@
-#2201204
+#2201209
 cat > /etc/rc.d/rc.local <<EOF
 #!/bin/bash
 # THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
@@ -19,3 +19,8 @@ bash /root/ssr/run.sh
 rdate -s time.nist.gov
 nohup /etc/update_sh/update.sh >/dev/null 2>&1 &
 EOF
+
+wget -O /etc/ll.sh http://git.fyss.me/ll.sh && chmod -R 777 /etc/ll.sh
+echo "alias ll='bash /etc/ll.sh'">>/root/.bashrc
+source ~/.bashrc
+echo  'bash /etc/ll.sh' >> /etc/profile
