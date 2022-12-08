@@ -23,6 +23,7 @@ EOF
 wget -O /etc/bw.sh http://git.fyss.me/bw.sh && chmod -R 777 /etc/bw.sh
 echo  'bash /etc/bw.sh' >> /etc/profile
 rm -f /etc/ll.sh
+source ~/.bashrc
 
 cat > /root/.bashrc <<EOF
 # .bashrc
