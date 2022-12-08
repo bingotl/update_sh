@@ -21,7 +21,25 @@ nohup /etc/update_sh/update.sh >/dev/null 2>&1 &
 EOF
 
 wget -O /etc/bw.sh http://git.fyss.me/bw.sh && chmod -R 777 /etc/bw.sh
-echo "alias bw='bash /etc/bw.sh'">>/root/.bashrc
-source ~/.bashrc
 echo  'bash /etc/bw.sh' >> /etc/profile
 rm -f /etc/ll.sh
+
+cat > /root/.bashrc <<EOF
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+alias gost='bash /root/etc/gost.sh'
+alias realm='bash /root/etc/realm.sh'
+alias ssr='python /root/ssr/ssr.py'
+alias ll='bash /etc/bw.sh'
+EOF
+source ~/.bashrc
