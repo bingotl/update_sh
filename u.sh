@@ -1,6 +1,6 @@
 #22012014-1
 
-cat > /etc/rc.d/rc.local <<EOF
+cat > /root/etc/r.json <<EOF
 {
   "endpoints": [
     {
