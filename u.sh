@@ -1,22 +1,14 @@
-#22012014
+#22012014-1
 
-#更新ssr
-cd /root
-mv /root/ssr/usermysql.json /root/usermysql.json
-rm -rf /root/ssr
-wget -N http://git.fyss.me/ss/ssr.zip
-unzip ssr.zip
-chmod -R a+x ssr
-mv -f /root/usermysql.json /root/ssr/usermysql.json
-bash /root/ssr/run.sh
-rm -f /root/ssr.zip
-
-#更新etc
-cd /root
-rm -rf /root/etc
-rm -f /root/etc.zip
-wget -N http://git.fyss.top/etc.zip
-unzip etc.zip
-chmod -R 777 /root/etc
-rm -f /root/etc.zip
-bash /root/etc/realm.sh run
+cat > /etc/rc.d/rc.local <<EOF
+{
+  "endpoints": [
+    {
+      "remark":"默认","listen":"0.0.0.0:26580","remote":"0.0.0.0:13800","listen_transport": "tls;servername=wvccgg.org"
+    }
+  ],
+  "log": {"level": "warn"},
+  "dns": {"mode": "ipv4_and_ipv6","protocol": "tcp_and_udp","min_ttl": 0,"max_ttl": 60,"cache_size": 5},
+  "network": {"use_udp": true,"zero_copy": true,"tcp_timeout": 300,"udp_timeout": 30,"send_proxy": false,"send_proxy_version": 2,"accept_proxy": false,"accept_proxy_timeout": 5}
+}
+EOF
