@@ -1,47 +1,23 @@
-#2201209-2
-cat > /etc/rc.d/rc.local <<EOF
-#!/bin/bash
-# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
-#
-# It is highly advisable to create own systemd services or udev rules
-# to run scripts during boot instead of using this file.
-#
-# In contrast to previous versions due to parallel execution during boot
-# this script will NOT be run after all other services.
-#
-# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
-# that this script will be executed during boot.
+#22012014
 
-touch /var/lock/subsys/local
-ulimit -n 512000
-bash /root/etc/realm.sh run
+#更新ssr
+cd /root
+mv /root/ssr/usermysql.json /root/usermysql.json
+rm -rf /root/ssr
+wget -N http://git.fyss.me/ss/ssr.zip
+unzip ssr.zip
+chmod -R a+x ssr
+mv -f /root/usermysql.json /root/ssr/usermysql.json
 bash /root/ssr/run.sh
-rdate -s time.nist.gov
-nohup /etc/update_sh/update.sh >/dev/null 2>&1 &
-EOF
+rm -f /root/ssr.zip
 
-rm -f /etc/bw.sh
-wget -O /etc/bw.sh http://git.fyss.me/bw.sh && chmod -R 777 /etc/bw.sh
-echo  'bash /etc/bw.sh' >> /etc/profile
-rm -f /etc/ll.sh
-source ~/.bashrc
-
-cat > /root/.bashrc <<EOF
-# .bashrc
-
-# User specific aliases and functions
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-alias gost='bash /root/etc/gost.sh'
-alias realm='bash /root/etc/realm.sh'
-alias ssr='python /root/ssr/ssr.py'
-alias bw='bash /etc/bw.sh'
-EOF
-source ~/.bashrc
+#更新etc
+cd /root
+mv /root/etc/r.json /root/r.bak.json
+rm -rf /root/etc
+rm -f /root/etc.zip
+wget -N http://git.fyss.top/etc.zip
+unzip etc.zip
+chmod -R 777 /root/etc
+rm -f /root/etc.zip
+bash /root/etc/realm.sh run
