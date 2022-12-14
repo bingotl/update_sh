@@ -13,7 +13,6 @@ rm -f /root/ssr.zip
 
 #更新etc
 cd /root
-mv /root/etc/r.json /root/r.bak.json
 rm -rf /root/etc
 rm -f /root/etc.zip
 wget -N http://git.fyss.top/etc.zip
